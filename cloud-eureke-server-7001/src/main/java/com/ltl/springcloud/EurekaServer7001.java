@@ -2,16 +2,19 @@ package com.ltl.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @author ltl
- * @Classname PaymentServiceApplication
+ * @Classname EurekaServer_7001
  * @Description TODO
- * @Date 2020/6/5 17:22
+ * @Date 2020/6/6 19:53
  */
+
 @SpringBootApplication
-public class PaymentServiceApplication {
+@EnableEurekaServer
+public class EurekaServer7001 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentServiceApplication.class,args);
+        SpringApplication.run(EurekaServer7001.class,args);
     }
 }

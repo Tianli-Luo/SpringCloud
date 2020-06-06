@@ -21,7 +21,7 @@ public class OrderController {
 
     @Autowired
     private RestTemplate restTemplate;
-    private static final String PAYMENT_URL = "http://localhost:8001/payment/%d";
+    private static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE/payment/";
 
     @GetMapping("/test")
     public String test(){
@@ -30,6 +30,6 @@ public class OrderController {
 
     @GetMapping("/{id}")
     public CommonResult<?> getOrderById(@PathVariable("id")Long id){
-        return restTemplate.getForObject(String.format(PAYMENT_URL,id),CommonResult.class);
+        return restTemplate.getForObject(PAYMENT_URL+id,CommonResult.class);
     }
 }

@@ -5,7 +5,6 @@ import com.ltl.springcloud.entities.Payment;
 import com.ltl.springcloud.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +26,6 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @Autowired
-    DiscoveryClient discoveryClient;
-
     @GetMapping("/test")
     public String test(){
         return "test";
@@ -45,10 +41,5 @@ public class PaymentController {
         }else {
             return new CommonResult<>(500,"订单查询失败 serverPort:"+serverPort);
         }
-    }
-
-    @GetMapping("/discovery")
-    public Object discovery(){
-        return discoveryClient;
     }
 }
