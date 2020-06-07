@@ -1,4 +1,4 @@
-package springcloud.controllor;
+package com.ltl.springcloud.controllor;
 
 import com.ltl.springcloud.entities.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
