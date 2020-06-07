@@ -10,6 +10,6 @@ eureka:
     service-url:
 #      defaultZone: http://eureka7002:7002/eureka/
       defaultZone: http://eureka7001:7001/eureka/
-  server:
-    enable-self-preservation: false
-    eviction-interval-timer-in-ms: 2000
+#  server:
+#    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 2000

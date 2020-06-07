@@ -10,7 +10,6 @@ spring:
     url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
 
 mybatis:
-  type-aliases-package: com.ltl.cloud-provider-payment-8001.entities
   mapper-locations: classpath:mapper/*.xml
 
 
@@ -23,5 +22,5 @@ eureka:
   instance:
     instance-id: payment8001
     prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 1
-    lease-expiration-duration-in-seconds: 2
+#    lease-renewal-interval-in-seconds: 1
+#    lease-expiration-duration-in-seconds: 2
