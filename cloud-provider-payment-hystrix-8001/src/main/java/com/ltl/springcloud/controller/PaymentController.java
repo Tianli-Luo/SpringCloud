@@ -3,6 +3,7 @@ package com.ltl.springcloud.controller;
 import com.ltl.springcloud.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,5 +36,10 @@ public class PaymentController {
             e.printStackTrace();
         }
         return paymentService.error();
+    }
+
+    @GetMapping("/error/{id}")
+    public String isError(@PathVariable("id")int id){
+        return paymentService.error(id);
     }
 }

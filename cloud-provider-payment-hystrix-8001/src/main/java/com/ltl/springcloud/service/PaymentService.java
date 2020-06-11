@@ -1,5 +1,6 @@
 package com.ltl.springcloud.service;
 
+import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentService {
 
+    @HystrixCommand(fallbackMethod = "fallback")
     public String ok(){
         return "ok";
     }
@@ -29,6 +31,25 @@ public class PaymentService {
 //        }
 //        int i = 1/0;
         return "error";
+    }
+
+
+    @HystrixCommand(fallbackMethod = "fallback",commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled",value = "true"),
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold",value = "10"),
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds",value = "10000"),
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage",value = "60")
+    })
+    public String error(int id){
+        if (id < 0){
+            throw new RuntimeException("id不能小于零");
+        }
+        return IdUtil.simpleUUID()+"  "+id;
+    }
+
+
+    public String fallback(int id){
+        return "fallback  "+id;
     }
 
     public String fallback(){
