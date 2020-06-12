@@ -1,0 +1,26 @@
+server:
+  port: 5002
+spring:
+  application:
+    name: Cloud-Config-Client
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:5001
+
+eureka:
+  instance:
+    instance-id: Cloud-Config-Client
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

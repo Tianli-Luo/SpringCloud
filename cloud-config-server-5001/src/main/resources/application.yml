@@ -1,0 +1,23 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Tianli-Luo/SpringCloudConfig.git
+          search-paths:
+            - SpringCloudConfig
+      label: master
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: cloud-config-server
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka/
+
