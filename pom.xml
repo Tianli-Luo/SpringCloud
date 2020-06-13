@@ -29,6 +29,9 @@
         <module>cloud-config-server-5001</module>
         <module>cloud-config-client-5002</module>
         <module>cloud-config-client-5003</module>
+        <module>cloud-stream-rabbitmq-provider-4001</module>
+        <module>cloud-stream-rabbitmq-consumer-4002</module>
+        <module>cloud-stream-rabbitmq-consumer-4003</module>
     </modules>
 
     <properties>
