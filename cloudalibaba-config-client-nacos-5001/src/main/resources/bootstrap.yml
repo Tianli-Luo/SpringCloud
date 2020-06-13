@@ -1,0 +1,14 @@
+server:
+  port: 5001
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: B_GROUP
+        namespace: a57a84ca-f58b-4035-9dbc-12656539bc0d
