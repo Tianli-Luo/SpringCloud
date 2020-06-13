@@ -9,7 +9,11 @@ spring:
       name: config
       profile: dev
       uri: http://localhost:5001
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   instance:
     instance-id: Cloud-Config-Client

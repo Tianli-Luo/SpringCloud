@@ -28,6 +28,7 @@
         <module>cloud-config-5001</module>
         <module>cloud-config-server-5001</module>
         <module>cloud-config-client-5002</module>
+        <module>cloud-config-client-5003</module>
     </modules>
 
     <properties>
