@@ -39,6 +39,9 @@
         <module>cloudalibaba-consumer-order-ribbon-80</module>
         <module>cloudalibaba-provider-payment-ribbon-8001</module>
         <module>cloudalibaba-provider-payment-ribbon-8002</module>
+        <module>cloudalibaba-orderservice-seata-80</module>
+        <module>cloudalibaba-accountService-seata-8001</module>
+        <module>cloudalibaba-storageservice-seata-8002</module>
     </modules>
 
     <properties>
